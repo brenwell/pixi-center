@@ -116,7 +116,7 @@ const opts = {
 
 ### Round to pixel
 
-By default pixi-center will play objects on whole pixels, by rounding them. Which is great for text as it will be crystal clear. However at times this behaviour is undesirable. Passing the options with `round:false` as the last argument will disable this.
+By default **pixi-center** will place objects on whole pixels by rounding them. Which is great for text as it will be crystal clear. However at times this behaviour is undesirable. Passing an options object with `round:false` as the last argument will disable this.
 
 ```js
 label.centerX( undefined, {round: false} )
@@ -127,7 +127,7 @@ label.centerAt( {x: 0, y: 0}, {round: false} )
 
 ### Anchor positions
 
-By default pixi-center will account for an elements anchor points when centering. But this can be overwritten if you wish to. By Passing the options with `anchorX` or `anchorY` as the last argument.
+By default **pixi-center** will account for an elements anchor points when centering. But this can be overwritten if you wish to. By passing an options object with `anchorX` or `anchorY` as the last argument.
 
 ```js
 label.centerX( undefined, {anchorX: 0} )
