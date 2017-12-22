@@ -9,8 +9,6 @@ Center Sprites, Text and DisplayObjects in pixi.js with ease.
 npm i pixi-center
 ```
 
-## Usage
-
 ## Importing
 
 Pixi pause will be automatically added to `PIXI.displayObject` which almost everything inxcluding `PIXI.Sprite` and `PIXI.Text` inerit from.
