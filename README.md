@@ -41,11 +41,11 @@ This is the simplest example. **Pixi-center** uses the parent's width and/or hei
 const label = new PIXI.Text(text,style)
 container.addChild(label)
 
-// call after the object as been added to a child
+// call after the object has been added to a child
 label.centerXY()
 ```
 
-#### Explictly supplying the bounds of which the element should center
+#### Explictly supplying the bounds for which the element should center
 
 This will center the text with a theoretical box of `width:200` by `height:300`
 
