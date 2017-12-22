@@ -61,7 +61,7 @@ mySprite.centerAt(
 
 ### Using the parent to center
 
-This is the simplest example. **Pixi-center** uses the parent's width and/or height if no options are passed. Which means to center it needs to be added (addChild) to something.
+This is the simplest example. **Pixi-center** uses the parent's width and/or height if no options are passed. Which means, your object needs to be added to a container before calling centerXY.
 
 ```js
 const label = new PIXI.Text(text,style)
@@ -76,13 +76,12 @@ label.centerXY()
 This will center the text within a theoretical box of `width:200` by `height:300`
 
 ```js
-const label = new PIXI.Text(text,style)
 label.centerXY(200,300)
 ```
 
 ### Center one axis only
 
-This will center the text within a theoretical box of `width:200` by `height:300`
+This will center the text vertically within a theoretical box of `height:300`, and then horizontally within the container,
 
 ```js
 const label = new PIXI.Text(text,style)
@@ -97,7 +96,7 @@ label.centerY()
 
 ### Center at a point
 
-This will center the label at give coordinate. Regardless of anchor values.
+This will center the label at the given coordinate, regardless of anchor values.
 
 ```js
 label.centerAt({x: 10, y: 10})
