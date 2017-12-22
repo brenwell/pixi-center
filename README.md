@@ -11,7 +11,7 @@ npm i pixi-center
 
 ## Importing
 
-Pixi pause will be automatically added to `PIXI.displayObject` which almost everything inxcluding `PIXI.Sprite` and `PIXI.Text` inerit from.
+For convenience **pixi-center** will be automatically added to `PIXI.displayObject` which almost everything, including `PIXI.Sprite` and `PIXI.Text`, inerit from.
 
 #### common.js
 
