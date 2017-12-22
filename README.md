@@ -91,7 +91,7 @@ label.centerY( undefined, {round: false} )
 label.centerXY( undefined, undefined, {round: false} )
 ```
 
-### Accomdate anchor positions
+### Anchor positions
 
 By default pixi-center will account for an elements anchor points when centering. But this can be overwritten if you wish to. By Passing the options with `anchorX` or `anchorY` as the last argument.
 
@@ -106,10 +106,7 @@ label.centerXY( undefined, undefined, {anchorX: 0, anchorY: 0.5} )
 You can simply call any of the `center` functions on window.resize
 
 ```js
-window.onresize = (e) =>
-{
-  label.centerXY(w,h)
-}
+window.onresize = (e) => label.centerXY()
 ```
 
 Or for elements with an update method you could re-center when it is fired
