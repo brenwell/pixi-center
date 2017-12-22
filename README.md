@@ -1,6 +1,10 @@
 # pixi-center
 
-Center Sprites, Text and DisplayObjects in pixi.js with ease.
+Center `PIXI.Sprite`, `PIXI.Text`, & `PIXI.Container` vertically and horizontally with ease. Actually you can center anything which inherits from `PIXI.DisplayObject`. It will round to the nearest pixel so your text stays sharp!
+
+**Working example**
+
+https://jsfiddle.net/pe3h0mfx/1/
 
 
 ## Install
@@ -43,7 +47,7 @@ label.centerXY()
 
 ### Explictly supplying the bounds for which the element should center
 
-This will center the text with a theoretical box of `width:200` by `height:300`
+This will center the text within a theoretical box of `width:200` by `height:300`
 
 ```js
 const label = new PIXI.Text(text,style)
@@ -52,7 +56,7 @@ label.centerXY(200,300)
 
 ### Center one axis only
 
-This will center the text with a theoretical box of `width:200` by `height:300`
+This will center the text within a theoretical box of `width:200` by `height:300`
 
 ```js
 const label = new PIXI.Text(text,style)
@@ -95,4 +99,21 @@ By default pixi-center will account for an elements anchor points when centering
 label.centerX( undefined, {anchorX: 0} )
 label.centerY( undefined, {anchorY: 0} )
 label.centerXY( undefined, undefined, {anchorX: 0, anchorY: 0.5} )
+```
+
+## Update on Resize
+
+You can simply call any of the `center` functions on window.resize
+
+```js
+window.onresize = (e) =>
+{
+  label.centerXY(w,h)
+}
+```
+
+Or for elements with an update method you could re-center when it is fired
+
+```js
+mySprite.update = () => mySprite.centerXY()
 ```
