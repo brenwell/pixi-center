@@ -4,7 +4,7 @@ Center `PIXI.Sprite`, `PIXI.Text`, & `PIXI.Container` vertically and horizontall
 
 **Working example**
 
-https://jsfiddle.net/pe3h0mfx/1/
+https://jsfiddle.net/brenwell/pe3h0mfx/3/
 
 
 ## Install
