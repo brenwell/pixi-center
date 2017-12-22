@@ -22,8 +22,10 @@
      * @param  {<type>}  anchorX  The anchor x
      * @param  {<type>}  anchorY  The anchor y
      */
-    pixi.DisplayObject.prototype.centerXY = function centerXY(width, height, round, anchorX, anchorY)
+    pixi.DisplayObject.prototype.centerXY = function centerXY(width, height, opts = {})
     {
+        const { round, anchorX, anchorY } = opts
+
         this.centerX(width, round, anchorX)
         this.centerY(height, round, anchorY)
     };
@@ -35,8 +37,11 @@
      * @param  {boolean}  round    The round
      * @param  {number}   anchorX  The anchor x
      */
-    pixi.DisplayObject.prototype.centerX = function centerX(width, round = true, anchorX = 0)
+    pixi.DisplayObject.prototype.centerX = function centerX(width, opts = {})
     {
+        const { round } = opts
+        let { anchorX } = opts
+
         if (!this.width) return;
 
         if (!width)
@@ -59,8 +64,11 @@
      * @param  {boolean}  round    The round
      * @param  {number}   anchorY  The anchor y
      */
-    pixi.DisplayObject.prototype.centerY = function centerY(height, round = true, anchorY = 0)
+    pixi.DisplayObject.prototype.centerY = function centerY(height, opts = {})
     {
+        const { round } = opts
+        let { anchorY } = opts
+
         if (!this.height) return;
 
         if (!height)
