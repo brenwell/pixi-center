@@ -35,23 +35,37 @@ import pixiPause from 'pixi-center'
 
 ### Methods
 
+**centerX**
+
 ```js
 mySprite.centerX(
-    width,      // container width
+    width,      // container width (Optional)
     options     // see options (Optional)
 )
+```
 
+**centerY**
+
+```js
 mySprite.centerY(
-    height,     // container height
+    height,     // container height (Optional)
     options     // see options (Optional)
 )
+```
 
+**centerXY**
+
+```js
 mySprite.centerXY(
-    width,      // container width
-    height,     // container height
+    width,      // container width (Optional)
+    height,     // container height (Optional)
     options     // see options (Optional)
 )
+```
 
+**centerAt**
+
+```js
 mySprite.centerAt(
     coordinates, // Coordinates e.g. {x:10,y:30}
     options     // see options (Optional)
