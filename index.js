@@ -49,7 +49,7 @@
             width = this.parent.width;
         }
 
-        if (this.anchor) anchorX = this.anchor.x;
+        if (typeof anchorX === "undefined" && this.anchor) anchorX = this.anchor.x;
 
         this.x = centerAxis(width, this.width, anchorX, round)
 
@@ -76,11 +76,38 @@
             height = this.parent.height;
         }
 
-        if (this.anchor) anchorY = this.anchor.y;
+        if (typeof anchorY === "undefined" && this.anchor) anchorY = this.anchor.y;
 
         this.y = centerAxis(height, this.height, anchorY, round)
     };
 
+    /**
+     * Centers an object at a point regardless of anchor
+     *
+     * @param  {<type>}  coords  The coordinates
+     */
+    pixi.DisplayObject.prototype.centerAt = function centerAt(coords, opts = {})
+    {
+        if (!coords) return;
+
+        const { x,y } = coords
+        const { round } = opts
+        let { anchorX, anchorY } = opts
+
+        if (typeof anchorX === "undefined" && this.anchor) anchorX = this.anchor.x;
+
+        if (typeof anchorY === "undefined" && this.anchor) anchorY = this.anchor.y;
+
+        if (x && isNumber(x))
+        {
+            this.x = centerAtPoint(x, this.width, anchorX, round)
+        }
+
+        if (y && isNumber(y))
+        {
+            this.y = centerAtPoint(y, this.height, anchorY, round)
+        }
+    }
 
 // eslint-disable-next-line
 }(PIXI));
@@ -99,5 +126,34 @@ function centerAxis(parentLength, elementLength, anchor = 0, round = true)
     let offset = ((parentLength - elementLength) / 2) + (elementLength * anchor)
 
     if (round) offset =  Math.round(offset);
+
     return offset
+}
+
+/**
+ * Centers an object at a certain point
+ *
+ * @param  {<type>}              axisPoint      The axis point
+ * @param  {number}              elementLength  The element length
+ * @param  {number}              anchor         The anchor
+ * @param  {(Function|boolean)}  round          The round
+ */
+function centerAtPoint(axisPoint, elementLength, anchor = 0, round = true)
+{
+    let offset = (parseFloat(axisPoint) - (elementLength / 2)) + (elementLength * anchor);
+
+    if (round) offset =  Math.round(offset);
+
+    return offset
+}
+
+/**
+ * Determines if number.
+ *
+ * @param  {<type>}   val  The value
+ * @return {boolean}  True if number, False otherwise.
+ */
+function isNumber(val)
+{
+    return !Number.isNaN(parseFloat(val))
 }

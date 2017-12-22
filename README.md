@@ -33,6 +33,32 @@ import pixiPause from 'pixi-center'
 
 ## Usage
 
+### Methods
+
+```js
+mySprite.centerX(
+    width,      // container width
+    options     // see options (Optional)
+)
+
+mySprite.centerY(
+    height,     // container height
+    options     // see options (Optional)
+)
+
+mySprite.centerXY(
+    width,      // container width
+    height,     // container height
+    options     // see options (Optional)
+)
+
+mySprite.centerAt(
+    coordinates, // Coordinates e.g. {x:10,y:30}
+    options     // see options (Optional)
+)
+```
+
+
 ### Using the parent to center
 
 This is the simplest example. **Pixi-center** uses the parent's width and/or height if no options are passed. Which means to center it needs to be added (addChild) to something.
@@ -69,12 +95,20 @@ container.addChild(label)
 label.centerY()
 ```
 
+### Center at a point
+
+This will center the label at give coordinate. Regardless of anchor values.
+
+```js
+label.centerAt({x: 10, y: 10})
+```
+
 ## Options
 
 The possible options are
 
 ```js
-{
+const opts = {
     round: true, // default is true. Applies to centerX, centerY & centerXY.
     anchorX: 0, // if not set will take from object. Applies to centerX & centerXY.
     anchorY: 0  // if not set will take from objecy. Applies to centerY & centerXY.
@@ -89,6 +123,7 @@ By default pixi-center will play objects on whole pixels, by rounding them. Whic
 label.centerX( undefined, {round: false} )
 label.centerY( undefined, {round: false} )
 label.centerXY( undefined, undefined, {round: false} )
+label.centerAt( {x: 0, y: 0}, {round: false} )
 ```
 
 ### Anchor positions
@@ -99,6 +134,7 @@ By default pixi-center will account for an elements anchor points when centering
 label.centerX( undefined, {anchorX: 0} )
 label.centerY( undefined, {anchorY: 0} )
 label.centerXY( undefined, undefined, {anchorX: 0, anchorY: 0.5} )
+label.centerAt( {x: 0, y: 0}, {anchorX: 0, anchorY: 0.5} )
 ```
 
 ## Update on Resize
