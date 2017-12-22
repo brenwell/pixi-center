@@ -1,0 +1,53 @@
+{
+  "name": "pixi-center",
+  "version": "1.0.0",
+  "description": "Center Sprites, Text and DisplayObjects in pixi.js with ease",
+  "main": "lib/pixi-center.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npm run build && npm test",
+    "lib": "npm run build && npm run min",
+    "build": "babel index.js -o ./lib/pixi-center.js -s inline",
+    "min": "minify index.js -o ./lib/pixi-center.min.js",
+    "test": "npm run unit && npm run lint",
+    "unit": "mocha",
+    "lint": "eslint index.js --fix",
+    "prepublishOnly": "npm run lib && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenwell/pixi-center.git"
+  },
+  "keywords": [
+    "pixi",
+    "pixi.js",
+    "center",
+    "vertical",
+    "text",
+    "sprite",
+    "displayObject"
+    "plugin"
+  ],
+  "author": "Brendon Blackwell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brenwell/pixi-center/issues"
+  },
+  "homepage": "https://github.com/brenwell/pixi-center#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.35",
+    "@babel/core": "^7.0.0-beta.35",
+    "@babel/preset-env": "^7.0.0-beta.35",
+    "babel-minify": "^0.2.0",
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.13.1",
+    "jsdom": "11.5.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "^4.0.1",
+    "pixi.js": "^4.6.2",
+    "sinon": "^4.1.3"
+  }
+}
