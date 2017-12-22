@@ -29,13 +29,13 @@ describe('Creation', () => {
         assert.equal(square.x, 113, 'Is working');
     });
 
-    it('PIXI.center should center element notrounded', () => {
+    it('PIXI.center should center element not rounded', () => {
         const square = new PIXI.Graphics()
         square.beginFill(0x000000)
         square.drawRect(0,0,75,75)
         square.endFill()
 
-        square.centerXY(300,300,false)
+        square.centerXY(300,300,{round:false})
 
         assert.equal(square.x, 112.5, 'Is working');
         assert.equal(square.x, 112.5, 'Is working');

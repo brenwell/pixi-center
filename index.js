@@ -24,10 +24,8 @@
      */
     pixi.DisplayObject.prototype.centerXY = function centerXY(width, height, opts = {})
     {
-        const { round, anchorX, anchorY } = opts
-
-        this.centerX(width, round, anchorX)
-        this.centerY(height, round, anchorY)
+        this.centerX(width, opts)
+        this.centerY(height, opts)
     };
 
     /**
@@ -96,7 +94,7 @@
  * @param  {number}              anchor         The anchor a value between 0-1
  * @param  {(Function|boolean)}  round          The round whether or not to round to a pixel
  */
-function centerAxis(parentLength, elementLength, anchor, round = true)
+function centerAxis(parentLength, elementLength, anchor = 0, round = true)
 {
     let offset = ((parentLength - elementLength) / 2) + (elementLength * anchor)
 
