@@ -1,6 +1,6 @@
 {
   "name": "pixi-center",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Center Sprites, Text and DisplayObjects in pixi.js with ease",
   "main": "lib/pixi-center.js",
   "directories": {

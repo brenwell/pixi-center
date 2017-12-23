@@ -1,5 +1,5 @@
 /**
- * pixi-pause is a plugin for pixi.js, which automatically pause and resumes your App when the browser window's visibilty changes
+ * pixi-center. Helps you horizontaly and vertically center anything which inherits from `PIXI.DisplayObject`
  */
 
 /* eslint-disable prefer-destructuring */
