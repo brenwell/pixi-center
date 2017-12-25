@@ -2,10 +2,6 @@
 
 Center `PIXI.Text`, `PIXI.Sprite`, & `PIXI.Container` vertically and horizontally with ease. Actually you can center anything which inherits from `PIXI.DisplayObject`. It will round to the nearest pixel so your text stays sharp!
 
-**Working example**
-
-https://jsfiddle.net/brenwell/zpk590p6/
-
 
 ## Install
 
@@ -61,6 +57,8 @@ mySprite.centerY(
 
 Center an object horizontally & vertically inside a container
 
+https://jsfiddle.net/brenwell/ecad57kb/
+
 ```js
 mySprite.centerXY(
     width,      // container width (Optional)
@@ -72,6 +70,8 @@ mySprite.centerXY(
 Center an object horizontally & vertically at a point
 
 **centerAt**
+
+https://jsfiddle.net/brenwell/zpk590p6/
 
 ```js
 mySprite.centerAt(
