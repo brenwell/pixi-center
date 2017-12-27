@@ -123,7 +123,7 @@
  */
 function centerAxis(parentLength, elementLength, anchor = 0, round = true)
 {
-    let offset = ((parentLength - elementLength) / 2) + (elementLength * anchor)
+    let offset = ((parentLength - elementLength) / 2) + ((elementLength * anchor) / 2)
 
     if (round) offset =  Math.round(offset);
 
